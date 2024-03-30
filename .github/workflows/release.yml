@@ -27,7 +27,7 @@ jobs:
       - name: setup rsync
         uses: GuillaumeFalourd/setup-rsync@v1.2
       - name: git checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: inject version automatically
         run: sed -i "s|version=.*\.dev|version=$(echo "${{ env.RELEASE_NAME }}" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')|" fritzBoxShell.sh 
       - name: create artifact directory
